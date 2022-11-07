@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 EMBEDDER_CHOICES = [
     "mobilenet",
+    "mobilenet_tf"
     "torchreid",
     "clip_RN50",
     "clip_RN101",
@@ -100,6 +101,17 @@ class DeepSort(object):
                     MobileNetv2_Embedder as Embedder,
                 )
 
+                self.embedder = Embedder(
+                    half=half,
+                    max_batch_size=16,
+                    bgr=bgr,
+                    gpu=embedder_gpu,
+                    model_wts_path=embedder_wts,
+                )
+            elif embedder == "mobilenet_tf":
+                from deep_sort_realtime.embedder.embedder_tf import (
+                    MobileNetv2_Embedder as Embedder,
+                )
                 self.embedder = Embedder(
                     half=half,
                     max_batch_size=16,
