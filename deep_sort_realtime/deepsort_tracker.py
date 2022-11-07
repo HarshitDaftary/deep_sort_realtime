@@ -113,7 +113,6 @@ class DeepSort(object):
                     MobileNetv2_Embedder as Embedder,
                 )
                 self.embedder = Embedder(
-                    half=half,
                     max_batch_size=16,
                     bgr=bgr,
                     gpu=embedder_gpu,
