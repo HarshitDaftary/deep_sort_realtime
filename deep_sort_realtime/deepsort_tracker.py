@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 EMBEDDER_CHOICES = [
     "mobilenet",
-    "mobilenet_tf"
+    "mobilenet_tf",
     "torchreid",
     "clip_RN50",
     "clip_RN101",
